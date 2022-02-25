@@ -1,5 +1,6 @@
 package academy.digitallab.store.shopping.entity;
 
+import academy.digitallab.store.shopping.model.Customer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
@@ -50,5 +51,9 @@ public class Invoice {
     public void prePersist() {
         this.createAt = new Date();
     }
+
+
+    @Transient
+    private Customer customer;
 
 }
